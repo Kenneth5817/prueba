@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page import="java.sql.*" %>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -31,33 +32,29 @@
 
     <%
         String nombre = request.getParameter("nombre");
-        String contraseña = request.getParameter("contraseña");
-        boolean loginExitoso = false;
+        String contrasena = request.getParameter("contrasena");
+        boolean loginCorrecto = false;
 
-        if (nombre != null && contraseña != null) {
+        if (nombre != null && contrasena != null) {
             try {
                 Class.forName("com.mysql.cj.jdbc.Driver");
-                Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/tu_base_de_datos", "tu_usuario", "tu_contraseña");
-
-                PreparedStatement ps = conexion.prepareStatement("SELECT * FROM usuarios WHERE nombre = ? AND contraseña = ?");
+                Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/alumnos", "root", "secret");
+                PreparedStatement ps = conexion.prepareStatement("SELECT * FROM usuarios WHERE nombre = ? AND contrasena = ?");
                 ps.setString(1, nombre);
-                ps.setString(2, contraseña);
+                ps.setString(2, contrasena);
 
                 ResultSet rs = ps.executeQuery();
 
                 if (rs.next()) {
-                    loginExitoso = true;
-                    response.sendRedirect("piramide.jsp");
-                } else {
-                    out.println("<p class='text-danger mt-3'>Usuario o contraseña incorrectos</p>");
+                    loginCorrecto = true;
                 }
 
-                conexion.close();
             } catch (Exception e) {
                 e.printStackTrace();
             }
         }
     %>
+
 </div>
 </body>
 </html>

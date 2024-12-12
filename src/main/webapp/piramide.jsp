@@ -5,6 +5,7 @@
   Time: 22:36
   To change this template use File | Settings | File Templates.
 --%>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -32,7 +33,7 @@
             out.println("<div class='text-center'>");
             for (int i = 1; i <= altura; i++) {
                 for (int j = 1; j <= i; j++) {
-                    out.print("<img src='https://placekitten.com/50/50' alt='gato' class='m-1'>");
+                    out.print("<img src='https://www.google.com/url?sa=i&url=https%3A%2F%2Fnupec.com%2Fblog-nupec%2Fque-es-un-gato-de-interior%2F&psig=AOvVaw3nHxxAULIxwRaQS3AyjwcH&ust=1734120508139000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCNjGg7yEo4oDFQAAAAAdAAAAABAE' alt='gato' class='m-1'>");
                 }
                 out.println("<br>");
             }

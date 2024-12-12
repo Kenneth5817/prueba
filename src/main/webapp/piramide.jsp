@@ -30,7 +30,7 @@
         if (alturaParam != null) {
             int altura = Integer.parseInt(alturaParam);
 
-            out.println("<div class='text-center'>");
+            out.println("<div class='text-center '>");
             for (int i = 1; i <= altura; i++) {
                 for (int j = 1; j <= i; j++) {
                     out.print("<img src='https://www.google.com/url?sa=i&url=https%3A%2F%2Fnupec.com%2Fblog-nupec%2Fque-es-un-gato-de-interior%2F&psig=AOvVaw3nHxxAULIxwRaQS3AyjwcH&ust=1734120508139000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCNjGg7yEo4oDFQAAAAAdAAAAABAE' alt='gato' class='m-1'>");

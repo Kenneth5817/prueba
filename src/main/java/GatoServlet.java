@@ -5,7 +5,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
- @WebServlet("/GatoServlet")
+ @WebServlet("/gatoServlet")
     public class GatoServlet extends HttpServlet {
         protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
             int altura = Integer.parseInt(request.getParameter("altura"));
@@ -19,7 +19,7 @@ import java.io.IOException;
                 piramide.append("<br>");
             }
 
-            // Pasar la pirámide al JSP para mostrarla
+            // Pasamos la pirámide al JSP para mostrarla
             request.setAttribute("piramide", piramide.toString());
             request.getRequestDispatcher("/home.jsp").forward(request, response);
         }
